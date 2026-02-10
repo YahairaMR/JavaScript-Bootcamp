@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Forms</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="01-review.js"></script>
+    <script defer src="02-forms.js"></script>
+  </head>
+  <body>
+    <h1>Review + Forms</h1>
+
+    <!-- REVIEW -->
+
+    <div id="featured-shark">
+      <h2>Featured Shark</h2>
+
+      <p>
+        Name:
+        <span id="featured-name">Name Goes Here</span>
+      </p>
+
+      <p>
+        Scientific Name: <span id="featured-species">Species Goes Here</span>
+      </p>
+
+      <p>Fun Fact: <span id="featured-fact">Fun Fact Goes Here</span></p>
+
+      <p>Diet:</p>
+      <ul id="featured-diet"></ul>
+
+      <p>Habitats:</p>
+      <ul id="featured-habitats"></ul>
+    </div>
+
+    <h2>Shark Facts</h2>
+
+    <ul id="shark-facts-list"></ul>
+
+    <!-- FORMS -->
+
+    <h2>Adding Shark Sightings</h2>
+
+    <form id="shark-sighting-form">
+      <label for="shark-species-input">Species: </label>
+      <input id="shark-species-input" type="text" />
+
+      <br />
+
+      <label for="shark-location-input">Where you sighted the shark: </label>
+      <input id="shark-location-input" type="text" />
+
+      <br />
+
+      <label for="shark-date-input">What day did you see the shark:</label>
+      <input id="shark-date-input" type="date" />
+
+      <br />
+
+      <input type="submit" value="Add Sighting" />
+    </form>
+
+    <ul id="shark-sightings-list">
+      <!-- this will be populated by sightings added by the form -->
+    </ul>
+  </body>
+</html>
