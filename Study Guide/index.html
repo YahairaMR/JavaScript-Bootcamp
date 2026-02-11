@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Study Guide</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <h1>JS Study Guide</h1>
+
+    <section id="variables">
+      <h2>Variables</h2>
+
+      <p>A variable:</p>
+
+      <ul>
+        <li>...is a container that stores a value.</li>
+        <li>...must be declared and assigned a value</li>
+        <li>...is a dynamic placeholder</li>
+      </ul>
+
+      <p>Declaring variables:</p>
+
+      <code>
+        let changeable = "I am changeable"
+        <br />
+        const unchangeable = "I am unchangeable"
+      </code>
+
+      <p>
+        You may reassign variables declared with
+        <span class="inline-code">let</span>:
+      </p>
+
+      <code> changeable = "I am a new value" </code>
+
+      <p>
+        You may not reassign variables declared with
+        <span class="inline-code">const</span>. This means anytime you see the
+        <span class="inline-code">=</span> operator or some special operators
+        you cannot use these with a <span class="inline-code">const</span>:
+      </p>
+
+      <code>
+        const someNumber = 2
+        <br />
+        // all three of the following won't work:
+        <br />
+        someNumber = someNumber + 1
+        <br />
+        someNumber += 1
+        <br />
+        someNumber++
+      </code>
+    </section>
+
+    <!-- SANDBOX -->
+
+    <div id="sandbox">
+      <h2>Welcome to the Sandbox</h2>
+
+      <p>I am the first p tag</p>
+
+      <p>I am the second p tag</p>
+
+      <p>REMOVE THIS P TAG</p>
+
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg"
+        alt="cat"
+      />
+
+      <ul>
+        <li class="text-green bg-yellow">List item 1</li>
+        <li>List item 2</li>
+        <li class="text-green">List item 3</li>
+        <li>List item 4</li>
+      </ul>
+
+      <button>Press Me</button>
+
+      <br />
+
+      <label for="check-me-box">Check Me:</label>
+      <input id="check-me-box" type="checkbox" />
+
+      <br />
+
+      <select id="bg-cat-dropdown">
+        <option value="persian">Persian</option>
+        <option value="maine-coon">Maine Coon</option>
+        <option value="sphynx">Sphynx</option>
+      </select>
+
+      <form id="contact-form">
+        <h2>Contact Form</h2>
+
+        <label for="email-input">Email:</label>
+        <input id="email-input" type="email" />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
