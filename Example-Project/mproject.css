@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(241, 239, 235);
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.panel-container {
+  background: #f3c027;
+  box-shadow: 0px -1px 10px 5px rgb(163, 116, 16);
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  width: 700px;
+  color: #faf3f3;
+}
+
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.icon-list li {
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.icon-list .icon {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 500px;
+}
+
+.panel-container strong {
+  line-height: 20px;
+  text-align: center;
+}
+
+.ratings-container {
+  display: flex;
+  margin: 20px 0;
+}
+
+.rating {
+  flex: 1;
+  cursor: pointer;
+  padding: 20px;
+  margin: 10px 5px;
+}
+
+.rating:hover,
+.rating.active {
+  border-radius: 5px;
+  background: hsl(41, 65%, 85%);
+  transition: 0.3s ease;
+}
+
+.rating .icon {
+  width: 50px;
+  font-size: 5rem;
+  margin-right: 10px;
+  display: inline-flex;
+}
+
+.rating p {
+  color: #faf3f3;
+  margin: 10px 0 0;
+}
+
+.respond {
+  background: #edebea;
+  color: #815606;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 30px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.respond:active {
+  transform: scale(0.98);
+}
+
+#feedbackList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#feedbackList li {
+  background: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deleteItemBtn {
+  background-color: rgb(116, 73, 9);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteItemBtn:hover {
+  background-color: rgba(118, 60, 16, 0.764);
+}
