@@ -1,4 +1,4 @@
-// Afternoon Exercises Part 1.5
+// Afternoon Exercises 2
 const RACCOON_BASE_URL = "http://localhost:3000/raccoons/"
 
 // 1. Copy the JSON data from GitHub into `raccoons.json` and start the server with `npx json-server raccoons.json`.

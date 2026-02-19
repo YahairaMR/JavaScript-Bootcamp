@@ -1,45 +1,85 @@
-// Afternoon Exercises Part 1.5
-const RACCOON_BASE_URL = "http://localhost:3000/raccoons/"
+// Afternoon Exercises Part 2
+const WEATHER_BASE_URL = "https://goweather.xyz/weather/"
 
-// 1. Copy the JSON data from GitHub into `raccoons.json` and start the server with `npx json-server raccoons.json`.
+// DOM ELEMENTS
+const currentCityNameSpan = document.querySelector("#current-city-name")
+const tempTodaySpan = document.querySelector("#temp-today")
+const windTodaySpan = document.querySelector("#wind-today")
+const dayOneForecastSpan = document.querySelector("#day-1-forecast")
+const dayTwoForecastSpan = document.querySelector("#day-2-forecast")
+const dayThreeForecastSpan = document.querySelector("#day-3-forecast")
+const currentCityForm = document.querySelector("#current-city-form")
+const currentCityInput = document.querySelector("#current-city-input")
+const loadingIndicator = document.querySelector("#loading-indicator")
 
-// 2. When the page loads, make a fetch call to the server for the raccoon data. Display each raccoon name as a <button>.
+// 1. Choose a default city. This can be a city close to you or alternately "NewYorkCity". Your city isn't guaranteed to be in the API so test in the browser by going to https://goweather.xyz/weather/YOUR_CITY_HERE.
 
-// 3. Clicking the button fetches the details for that raccoon and displays the details in a container with their name, etc.
+// Once you have tested your city, create a let for currentCity.
 
-// 4. If a raccoon does not have an `image_url`, use a default stock raccoon image instead.
+// For example:
+let currentCity = "NewYorkCity"
 
-const raccoonButtons = document.querySelector("#raccoon-buttons")
-const raccoonName = document.querySelector("#raccoon-name")
-const raccoonLocation = document.querySelector("#raccoon-location")
-const raccoonImage = document.querySelector("#raccoon-image")
+// 2. Make a fetch to the url + `currentCity` which will return simple weather data. Display the name of the currentCity, the current temperature, and wind speed.
 
-async function fetchAllRaccoons() {
-    const response = await fetch(RACCOON_BASE_URL)
-    const data = await response.json()
+async function getWeatherForCurrentCity() {
+    setLoading(true)
+
+    try {
+        const response = await fetch(WEATHER_BASE_URL + currentCity)
+        const data = await response.json()
     
-    data.forEach(createRaccoonButton)
-}
-
-function createRaccoonButton(raccoonObj) {
-    const button = document.createElement("button")
-    button.textContent = raccoonObj.name
-    raccoonButtons.append(button)
-
-    button.addEventListener("click", () => fetchRaccoon(raccoonObj.id))
-}
-
-async function fetchRaccoon(id) {
-    const response = await fetch(RACCOON_BASE_URL + id)
-    const data = await response.json()
+        currentCityNameSpan.textContent = currentCity
+        const parsedTemp = parseInt(data.temperature)
+        const convertedTemp = cToF(parsedTemp)
+        tempTodaySpan.textContent = convertedTemp
+        windTodaySpan.textContent = data.wind
     
-    raccoonName.textContent = data.name
-    raccoonLocation.textContent = data.location
-    raccoonImage.alt = data.name
-
-    const chosenImage = data.img_url || "https://vetmed.tamu.edu/news/wp-content/uploads/sites/9/2011/05/raccoon-3820327_1920.jpg"
-
-    raccoonImage.src = chosenImage
+        const parsedTemp1 = parseInt(data.forecast[0].temperature)
+        dayOneForecastSpan.textContent = cToF(parsedTemp1)
+     
+        const parsedTemp2 = parseInt(data.forecast[1].temperature)
+        dayTwoForecastSpan.textContent = cToF(parsedTemp2)
+        
+        const parsedTemp3 = parseInt(data.forecast[2].temperature)
+        dayThreeForecastSpan.textContent = cToF(parsedTemp3)
+    } catch(error) {
+        tempTodaySpan.textContent = "No data"
+        windTodaySpan.textContent = "No data"
+        dayOneForecastSpan.textContent = "No data"
+        dayTwoForecastSpan.textContent = "No data"
+        dayThreeForecastSpan.textContent = "No data"
+        alert(`Unable to fetch the weather for ${currentCity}`)
+    } finally {
+        setLoading(false)
+    }
 }
 
-fetchAllRaccoons()
+// 3. The temperature is currently in celsius so convert it to farenheit. You will need to find a way to get only the first part of the temperature string, convert it into an integer, and then do the math for it.
+
+function cToF(temp) {
+    return (temp * 1.8) + 32
+}
+
+function setLoading(loading) {
+    if (loading) {
+        loadingIndicator.style.display = "block"
+    } else {
+        loadingIndicator.style.display = "none"
+    }
+}
+
+// BONUS: Do this for wind speed as well from km/h to mi/h.
+
+// 4. Create a "Forecast" section. Display the temperature for the next three days in the section when a city is fetched. Convert them to farenheit.
+
+// BONUS: Create a <form> for city names. When submitted, change the currentCity to the submitted city and refetch the data, rendering as necessary.
+
+currentCityForm.addEventListener("submit", handleChangeCurrentCity)
+
+function handleChangeCurrentCity(event) {
+    event.preventDefault()
+    currentCity = currentCityInput.value
+    getWeatherForCurrentCity()
+}
+
+getWeatherForCurrentCity()
