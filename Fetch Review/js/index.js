@@ -18,7 +18,7 @@ function createAwardWinnerLi(awardWinnerObj) {
 }
 
 
-// fetches the award winner based on id from the json server
+// fetches the award winner based on id from the json serverf
 // changes text content for the detail section
 async function getAwardWinnerById( id ) {
     const response = await fetch(`${BASE_URL}?id=${id}`)

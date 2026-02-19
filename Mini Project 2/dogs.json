@@ -1,0 +1,56 @@
+{
+    "dogs": [
+        { 
+        "id": 1,
+        "breed": "German Shepherd",
+        "temperament": "confident, courageous, intelligent",
+        "life_span": "9-13 yrs",
+        "img_url":"https://cdn4.thedogapi.com/optimized/kc6oAx2b3X.jpg"
+        },
+        {
+        "id": 2,
+        "breed": "French Bulldog",
+        "temperament": "affectionate, playful, alert",
+        "lifed_span": "10-12 yrs",
+        "img_url":"https://cdn4.thedogapi.com/optimized/Rvl1BeqaRB.jpg"
+        },    
+        {
+        "id":3,
+        "breed": "Cane Corso",
+        "temperament": "confident, protective, intelligent",
+        "life_span": "9-12 yrs",
+        "img_url":"https://storage.googleapis.com/dog-api-uploads-prod/originals/10d8fcaf-a0dd-4988-9e69-54002e3c4f83.png"      
+        },
+        {
+        "id": 4,
+        "breed": "Beagle",
+        "temperament": "friendly, gentle, alert",
+        "life_span": "10-15 yrs",
+        "img_url":"https://storage.googleapis.com/dog-api-uploads-prod/originals/076906f8-69d2-41be-957b-9542e1e36bbc.jpeg"
+        },
+        {
+        "id": 5,
+        "breed": "Rottweiler",
+        "temperament": "confident, loyal, courageous",
+        "lifeSpan": "9-10 yrs",
+        "img_url":"https://cdn4.thedogapi.com/optimized/LxI7Kkc5oH.jpg" 
+        },
+        {
+        "id": 6,
+        "breed": "Doberman Pinscher",
+        "temperament": "intelligent, alert, loyal",
+        "life_span": "10-12 yrs",
+        "img_url": "https://cdn4.thedogapi.com/optimized/yy1nVxX1TD.jpg"       
+        },
+        {
+        "id": 7,
+        "breed": "Presa Canario",
+        "temperament": "confident, calm, protective.",
+        "life_span": "9-11 yrs", 
+        "img_url": "https://cdn4.thedogapi.com/optimized/nF8GskKeDc.jpg"   
+        } 
+    ] 
+}
+
+
+    
