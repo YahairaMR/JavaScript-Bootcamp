@@ -119,7 +119,7 @@ const putButton = document.querySelector('#put')
 
 putButton.addEventListener('click', () => {
   const updateUser = async () => {
-    // PUT fetch(URL/{userId}) - MUST specify the user we are updating ir our URL
+    // PUT fetch(URL/{userId}) - MUST specify the user we are updating in our URL
     const response = await fetch(`${userURL}/3`, {
       // we put our object inside the curly braces
       method: 'PUT',
@@ -140,7 +140,7 @@ putButton.addEventListener('click', () => {
 const deleteButton = document.querySelector('#delete')
 
 deleteButton.addEventListener('click', () => {
-  const deleteuser = async () => {
+  const deleteUser = async () => {
     // Delete only needs the ID of the item you are trying to remove (no additional body!)
     const response = await fetch(userURL + '/1', {
       method: 'DELETE',
@@ -151,5 +151,5 @@ deleteButton.addEventListener('click', () => {
     const data = await response.json()
     console.log(data)
   }
-  deleteuser()
+  deleteUser()
 })
