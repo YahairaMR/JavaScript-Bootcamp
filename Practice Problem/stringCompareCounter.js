@@ -1,4 +1,5 @@
 /*
+
 stringCompareCounter
 Write a function called stringCompareCounter that takes in 2 strings of the same length as parameters. return a count of how many characters the strings share at the same index.
 

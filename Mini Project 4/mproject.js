@@ -61,3 +61,4 @@ generateRandomFish();
 
 // creating a UI with console.logs/prompts like we did for the to-do list
 // make it so player can catch OR release fish
+// 6 turns long

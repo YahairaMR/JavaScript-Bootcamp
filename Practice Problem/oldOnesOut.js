@@ -1,4 +1,5 @@
 /* 
+
 oddOnesOut
 Write a function oddOnesOut that takes in an array of numbers. Return an array with the same numbers in the same order, but all 1's removed.
 
