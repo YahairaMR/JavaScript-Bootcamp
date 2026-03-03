@@ -29,10 +29,14 @@ const generateRandomName = () => {
 }
 
 const generateRandomWeight = () => {
-    // .toFixed(num) - returns a (string)decimal based on how many specified places (num) that you pass in
+    // .toFixed(num) - returns a (string) decimal based on how many specified places (num) that you pass in
     // .toFixed(2) -> 2 decimal places
     // .toFixed(3) -> 3 decimal places etc.
-    return Number(Math.random() * 5).toFixed(2);
+    return Number((Math.random() * 5).toFixed(2));
+}
+
+const generateRandomValue = () => {
+    return Number((Math.random() * 15).toFixed(2));
 }
 
 const generateRandomFish = () => {
@@ -41,14 +45,19 @@ const generateRandomFish = () => {
     // random weight
     let fishWeight = generateRandomWeight();
     // random value
+    let fishValue = generateRandomValue();
 
     // our new fish object
     let newFish = {
         name: fishName,
-        weight: fishWeight
+        weight: fishWeight,
+        value: fishValue
     }
 
     console.log(newFish)
 }
 
 generateRandomFish();
+
+// creating a UI with console.logs/prompts like we did for the to-do list
+// make it so player can catch OR release fish
