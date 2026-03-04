@@ -76,7 +76,6 @@ let totalWeight = 0;
 let totalValue = 0;
 
 while (hour < 12) {
-
   // total weight and total value
   console.log(`The time is ${hour}:00am. So far you've caught:
 ${caughtArray.length} fish, ${totalWeight} lbs, $${totalValue}`);
@@ -85,25 +84,58 @@ ${caughtArray.length} fish, ${totalWeight} lbs, $${totalValue}`);
   console.log(`You caught a '${currentFish.name}' weighing ${currentFish.weight} lbs
 and valued at $${currentFish.value}\n`);
 
-  console.log(`Your action: [c]atch or [r]elease?`);
-  let choice = prompt("> ");
+  // currentFish
+  // totalWeight
+  // checking to see if current fish would put you over the weight limit
+  if (currentFish.weight + totalWeight > 10) {
+    // would exceed limit - skip current fish
+    console.log(`This fish would put you over 10 lbs, so you release it.`);
 
-  if (choice === "c") {
-    console.log("\nYou chose to catch the fish");
-    caughtArray.push(currentFish);
-
-    totalWeight = Number((totalWeight + currentFish.weight).toFixed(2));
-    totalValue = Number((totalValue + currentFish.value).toFixed(2));
+    console.log(`Press [enter] to continue.`);
+    prompt("> ");
   } else {
-    console.log("\nYou chose to release the finish");
+    // would not exceed limit - play game as normal
+    console.log(`Your action: [c]atch or [r]elease?`);
+    let choice = prompt("> ");
+
+    if (choice === "c") {
+      console.log("\nYou chose to catch the fish");
+      caughtArray.push(currentFish);
+
+      totalWeight = Number((totalWeight + currentFish.weight).toFixed(2));
+      totalValue = Number((totalValue + currentFish.value).toFixed(2));
+    } else {
+      console.log("\nYou chose to release the finish");
+    }
   }
 
   console.log("\n==========================================\n");
   hour++;
 }
 
+console.log("The time is 12:00pm. Times up!\n");
+
+console.log(`You caught ${caughtArray.length} fish: `);
+
+for (let fish of caughtArray) {
+  console.log(`* ${fish.name}, ${fish.weight} lbs, $${fish.value}`);
+}
+
+console.log(`\nTotal weight: ${totalWeight} lbs`);
+console.log(`Total value: $${totalValue}`);
+
+
 // keep track of fish caught
 // keep track of totals that need to be displayed to player every turn
 
 // totals for when the game is over
 // prevent the user from catching over 10 lbs
+
+/*
+The time is 12:00pm. Times up!
+You caught 2 fish:
+* Slimy Scaly Bass, 0.24 lbs, $3.12
+* Grey Bottom-dwelling Angler, 9.56 lbs, $22.18
+Total weight: 9.8 lbs
+Total value: $25.30
+*/
