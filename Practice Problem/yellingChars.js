@@ -11,17 +11,17 @@ yellingChars('oh hello') -> 'o!h! !h!e!l!l!o!'
 */
 
 const yellingChars = (str) => {
-    // string that will keep track of our answer
-    let result = "";
+  // string that will keep track of our answer
+  let result = "";
 
-    for (let i = 0; i < str.length; i++) {
-        // add the current character to result
-        // current character: str[i]
-        result += str[i] + "!";
-        // result = result + str[i] + "!";
-    }
+  for (let i = 0; i < str.length; i++) {
+    // add the current character to result
+    // current character: str[i]
+    result += str[i] + "!";
+    // result = result + str[i] + "!";
+  }
 
-    return result;
-}
+  return result;
+};
 
-console.log(yellingChars('goodness'))
+console.log(yellingChars("goodness"));

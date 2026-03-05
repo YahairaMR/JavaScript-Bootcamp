@@ -124,7 +124,6 @@ for (let fish of caughtArray) {
 console.log(`\nTotal weight: ${totalWeight} lbs`);
 console.log(`Total value: $${totalValue}`);
 
-
 // keep track of fish caught
 // keep track of totals that need to be displayed to player every turn
 
