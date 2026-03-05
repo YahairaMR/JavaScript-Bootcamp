@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Local Storage</h1>
+    <button id="clear">Clear</button>
+    <form id="saveForm">
+      <input id="stringInput" type="text" autocomplete="off" />
+      <button>Submit</button>
+    </form>
+    <div id="savedString">Nothing Saved</div>
+    <br />
+    <br />
+    <br />
+
+    <h2>User Form</h2>
+    <form id="createUserForm">
+      <div>
+        <label>Username: </label>
+        <input id="usernameInput" type="text" autocomplete="off" />
+      </div>
+
+      <div>
+        <label>Email: </label>
+        <input id="emailInput" type="email" autocomplete="off" />
+      </div>
+      <button>Submit</button>
+    </form>
+    <div id="userDisplay"></div>
+
+    <h2>Load Counter</h2>
+    <p id="displayCount">1</p>
+
+    <h2>List Form</h2>
+    <form id="listForm">
+      <div>
+        <label>Item: </label>
+        <input id="listInput" type="text" autocomplete="off" />
+      </div>
+      <button>Submit</button>
+    </form>
+
+    <ol id="savedList"></ol>
+
+    <script src="main.js"></script>
+  </body>
+</html>
