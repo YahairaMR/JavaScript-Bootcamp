@@ -150,9 +150,10 @@ listForm.addEventListener("submit", (event) => {
   items.push(listInput.value);
 
   let newElement = document.createElement("li");
-  newElement.textContent = items[i];
-
+  newElement.textContent = listInput.value;
   savedList.append(newElement);
 
   localStorage.setItem("items", JSON.stringify(items));
+
+  listInput.value = "";
 });
